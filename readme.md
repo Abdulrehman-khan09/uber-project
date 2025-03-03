@@ -39,7 +39,7 @@ Users and captains can perform various ride-related actions such as:
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
 - **Real-Time Communication**: Socket.io
-- **Maps**: Google Maps API
+- **Maps**: Tom Tom Api
 
 ## Getting Started
 
