@@ -8,6 +8,7 @@ import axios from 'axios';
 const UserLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
 
   const navigate = useNavigate()
   const {user,setUser} = React.useContext(UserDataContext)
@@ -67,16 +68,24 @@ const UserLogin = () => {
                     setpassword(e.target.value)
                  }}
                  className='px-2 mt-1 w-[290px] rounded-md placeholder:font-semibold bg-[#eeeeee]  h-10 ' 
-                 type=" password" name="password" 
+                 type={showPassword ? "text" : "password"}  
                   placeholder='password'
                   value={password} />
-                  
                  </div>
+                 
+                 <button 
+                type="button" 
+                className='absolute right-4 bottom-[420px]' 
+                onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ?  <i class="ri-eye-off-line"></i> :  <i class="ri-eye-line"></i> }
+               
+              </button>
 
                 </div>
                  <div className='p-3 mb-2'>
                  <button className='text-white w-full font-semibold p-2 capitalize  bg-black'>Sign in as user</button>
                  </div>
+
 
             </form>
 

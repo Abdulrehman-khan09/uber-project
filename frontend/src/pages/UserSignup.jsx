@@ -12,8 +12,9 @@ const UserSignup = () => {
   const [lastname, setlastname] = useState('')
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
 
-  const  navigate = useNavigate()
+  const navigate = useNavigate()
 
   const {user,setUser} = React.useContext(UserDataContext)
 
@@ -82,12 +83,23 @@ const UserSignup = () => {
 
              <div className='password mt-2'>
             <h1 className='font-bold'>Enter Your Password</h1>
-            <input 
-             onChange={(e)=>{
-              setpassword(e.target.value)
-          }}
-            value={password}
-            className='px-1 mt-1 w-[300px] rounded-md bg-[#eeeeee] border h-10 border-black' type=" password" name="" id=""  placeholder='password'/>
+            <div className='relative'>
+              <input 
+                onChange={(e)=>{
+                  setpassword(e.target.value)
+              }}
+                value={password}
+                className='px-1 mt-1 w-[300px] rounded-md bg-[#eeeeee] border h-10 border-black' 
+                type={showPassword ? "text" : "password"} 
+                placeholder='password'/>
+              <button 
+                type="button" 
+                className='absolute right-2 top-2' 
+                onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ?  <i class="ri-eye-off-line"></i> :  <i class="ri-eye-line"></i>}
+               
+              </button>
+            </div>
              </div>
 
             </div>
@@ -108,7 +120,6 @@ const UserSignup = () => {
 
     </div>
  </div>
-  )
-}
+  ) }
 
 export default UserSignup

@@ -37,8 +37,7 @@ import LiveTracking from "../components/LiveTracking"
       </div>
 
       <div className="absolute bottom-0 left-0 h-[25vh] p-10 right-0 bg-yellow-400 rounded-t-3xl">
-        <div className="p-4 flex items-center justify-between">
-          <span className="font-bold  text-gray-800">4 Km away</span>
+        <div className="p-4 flex items-center justify-center">
           <button 
           onClick={()=>{
             setFinishRide(true)

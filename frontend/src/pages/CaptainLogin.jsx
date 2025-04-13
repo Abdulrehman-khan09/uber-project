@@ -8,6 +8,7 @@ const CaptainLogin = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
       
      const navigate = useNavigate()
      const {captain , setCaptain} = React.useContext(CaptainDataContext)
@@ -56,8 +57,18 @@ const CaptainLogin = () => {
               onChange={(e)=>{
                 setPassword(e.target.value)
           }}
-            className='px-2 placeholder:font-semibold mt-1 w-[300px] rounded-md bg-[#eeeeee]  h-10 ' type=" password" name="" id=""  placeholder='password'/>
+            className='px-2 placeholder:font-semibold mt-1 w-[300px] rounded-md bg-[#eeeeee]  h-10 ' 
+            type={showPassword ? "text" : "password"} 
+            placeholder='password'/>
              </div>
+
+             <button 
+                type="button" 
+                className='absolute left-[345px] bottom-[430px] ' 
+                onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ?  <i class="ri-eye-off-line"></i> :  <i class="ri-eye-line"></i>}
+               
+              </button>
 
             </div>
              <div className='p-3 mb-2'>

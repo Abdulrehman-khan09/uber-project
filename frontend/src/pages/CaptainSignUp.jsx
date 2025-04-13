@@ -10,6 +10,7 @@ const CaptainSignup = () => {
   const [lastname, setlastname] = useState('')
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   
   const [vehicleColor, setVehicleColor] = useState('')
   const [vehiclePlate, setVehiclePlate] = useState('')
@@ -109,8 +110,17 @@ const CaptainSignup = () => {
               setpassword(e.target.value)
           }}
             value={password}
-            className='px-1 mt-1 w-[300px] rounded-md bg-[#eeeeee] border h-10 border-black' type=" password" name="" id=""  placeholder='password'/>
+            type={showPassword ? "text" : "password"} 
+            className='px-1 mt-1 w-[300px] rounded-md bg-[#eeeeee] border h-10 border-black'  name="" id=""  placeholder='password'/>
              </div>
+
+             <button 
+                type="button" 
+                className='absolute left-[330px] bottom-[350px]' 
+                onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ?  <i class="ri-eye-off-line"></i> :  <i class="ri-eye-line"></i>}
+               
+              </button>
                 
              <div className='vehicle-data mt-4'>
           <h1 className='font-bold mb-2'>Vehicle Information</h1>

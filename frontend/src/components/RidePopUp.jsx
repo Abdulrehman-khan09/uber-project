@@ -18,7 +18,7 @@ const RidePopUp = (props) => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="font-bold">
+            <span className="font-bold capitalize">
               {props.ride?.user.fullname.firstname +
                 " " +
                 props.ride?.user.fullname.lastname}
